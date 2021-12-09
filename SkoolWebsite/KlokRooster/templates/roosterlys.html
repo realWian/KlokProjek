@@ -1,0 +1,16 @@
+{% extends 'rooster_base.html' %}
+
+{% block title_block %}
+<title>Roosterlys</title>
+{% endblock %}
+
+{% block body_block %}
+<h3>Roosters:</h3>
+<ol>
+    {% for rooster in roosters %}
+        <li>
+            <a href="{% url 'KlokRooster:rooster' rooster.pk %}">{{ rooster.naam }}</a>
+        </li>
+    {% endfor %}
+</ol>
+{% endblock %}
