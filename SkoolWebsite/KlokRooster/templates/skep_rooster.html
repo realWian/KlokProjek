@@ -1,13 +1,13 @@
 {% extends 'rooster_base.html' %}
 
 {% block head_block %}
-<title>Verander Rooster: {{ rooster.naam }}</title>
+<title>Skep Nuwe Rooster</title>
 {% endblock %}
 
 {% block body_block %}
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Bevestig</button>
+    <button type="submit">Skep Rooster</button>
 </form>
 {% endblock %}

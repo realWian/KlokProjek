@@ -46,4 +46,7 @@
         <td>{{ rooster.uitkomtyd }}</td>
     </tr>
 </table>
+<br>
+<a href="{% url 'KlokRooster:verander_rooster' rooster.pk %}"><button>Verander</button></a>
+<a href="{% url 'KlokRooster:skrap_rooster' rooster.pk %}"><button>Skrap</button></a>
 {% endblock %}

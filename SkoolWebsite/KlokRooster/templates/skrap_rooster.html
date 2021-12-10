@@ -1,0 +1,18 @@
+{% extends 'rooster_base.html' %}
+
+{% block head_block %}
+<title>Skrap "{{ rooster.naam }}"</title>
+{% endblock %}
+
+{% block body_block %}
+<form method="POST">
+    {% csrf_token %}
+    <br>    
+    <h2>Is u seker u wil "{{ rooster.naam }}" SKRAP?</h2>
+    <br>
+    ><button type="submit">SKRAP</button>
+    <br>
+    <br>
+    <a href="{% url 'KlokRooster:roosterlys' %}">Kanselleer</a>
+</form>
+{% endblock %}
