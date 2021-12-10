@@ -1,6 +1,8 @@
 {% extends 'rooster_base.html' %}
 
-{% block title_block %}
+{% block head_block %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/wys_rooster.css' %}">
 <title>{{ rooster.naam }}</title>
 {% endblock %}
 
