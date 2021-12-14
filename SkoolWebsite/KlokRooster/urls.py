@@ -1,9 +1,10 @@
 from django.urls import path
-from KlokRooster.views import RoosterListView, RoosterDetailView, RoosterUpdateView, RoosterCreateView, RoosterDeleteView, luister_vir_lui, verdoof, lui_klok
+from KlokRooster.views import Index, RoosterListView, RoosterDetailView, RoosterUpdateView, RoosterCreateView, RoosterDeleteView, luister_vir_lui, verdoof, lui_klok
 
 app_name = "KlokRooster"
 
 urlpatterns = [
+    path('', Index.as_view(), name='index'),
     path('roosterlys/', RoosterListView.as_view(), name="roosterlys"),
     path('rooster/<int:pk>/luisterend', luister_vir_lui, name="luister_vir_lui"),
     path('rooster/<int:pk>/verdoof', verdoof, name="verdoof"),

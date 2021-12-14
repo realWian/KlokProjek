@@ -1,6 +1,8 @@
 {% extends 'rooster_base.html' %}
 
 {% block head_block %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/skrap_rooster.css' %}">
 <title>Skrap "{{ rooster.naam }}"</title>
 {% endblock %}
 
@@ -10,9 +12,9 @@
     <br>    
     <h2>Is u seker u wil "{{ rooster.naam }}" SKRAP?</h2>
     <br>
-    <button type="submit">SKRAP</button>
+    <button class="skrap" type="submit">SKRAP</button>
     <br>
     <br>
-    <a href="{% url 'KlokRooster:roosterlys' %}">Kanselleer</a>
+    <a href="{% url 'KlokRooster:roosterlys' %}" id="kanselleer">Kanselleer</a>
 </form>
 {% endblock %}

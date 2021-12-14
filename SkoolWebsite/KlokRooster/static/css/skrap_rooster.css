@@ -1,0 +1,12 @@
+.skrap {
+    font-size: 16pt;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: red;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+#kanselleer {
+    font-size: 15pt;
+}

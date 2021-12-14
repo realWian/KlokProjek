@@ -1,13 +1,16 @@
 {% extends 'rooster_base.html' %}
 
 {% block head_block %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/skep_rooster.css' %}">
 <title>Skep Nuwe Rooster</title>
 {% endblock %}
 
 {% block body_block %}
+<br>
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Skep Rooster</button>
+    <button class="skep_nuwe" type="submit">Skep Rooster</button>
 </form>
 {% endblock %}

@@ -15,16 +15,38 @@ a button {
     font-size: 16pt;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: greenyellow;
-    margin-bottom: 10px;
-    margin-left: 5%;
     border-radius: 10px;
 }
 
 .luisterend {
     font-size: 16pt;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: rgb(216, 56, 56);
-    margin-bottom: 10px;
-    margin-left: 5%;
+    background-color: orange;
     border-radius: 10px;
+}
+
+.lui_klok {
+    font-size: 16pt;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: yellow;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.verander {
+    font-size: 16pt;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: blue;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.skrap {
+    font-size: 16pt;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: red;
+    border-radius: 10px;
+    padding: 5px;
 }
