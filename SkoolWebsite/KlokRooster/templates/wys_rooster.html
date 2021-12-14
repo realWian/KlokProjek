@@ -4,6 +4,15 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/wys_rooster.css' %}">
 <title>{{ rooster.naam }}</title>
+<script>
+    function veranderToestand() {
+        if (document.getElementById("luister_doof").innerHTML === "<a href=\"{% url 'KlokRooster:verdoof' rooster.pk %}\"><button class=\"luisterend\">Verdoof</button></a>") {
+            document.getElementById("luister_doof").innerHTML = "<a href=\"{% url 'KlokRooster:luister_vir_lui' rooster.pk %}\"><button class=\"doof\">Luister</button></a>"
+        } else {
+            document.getElementById("luister_doof").innerHTML = "<a href=\"{% url 'KlokRooster:verdoof' rooster.pk %}\"><button class=\"luisterend\">Verdoof</button></a>"
+        }
+}
+</script>
 {% endblock %}
 
 {% block body_block %}
@@ -50,8 +59,10 @@
 <a href="{% url 'KlokRooster:verander_rooster' rooster.pk %}"><button>Verander</button></a>
 <a href="{% url 'KlokRooster:skrap_rooster' rooster.pk %}"><button>Skrap</button></a>
 <br>
-<a href="{% url 'KlokRooster:luister_vir_lui' rooster.pk %}"><button class="doof">Luister</button></a>
-<a href="{% url 'KlokRooster:verdoof' rooster.pk %}"><button class="luisterend">Verdoof</button></a>
+<div id="luister_doof">
+    <a href="{% url 'KlokRooster:luister_vir_lui' rooster.pk %}"><button class="doof" onclick="veranderToestand()">Luister</button></a>
+</div>
+<!-- <a href="{% url 'KlokRooster:verdoof' rooster.pk %}"><button class="luisterend">Verdoof</button></a> -->
 <br>
 <a href="{% url 'KlokRooster:lui_klok' rooster.pk %}"><button class="luisterend">Lui Klok</button></a>
 {% endblock %}

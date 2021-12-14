@@ -32,12 +32,12 @@ def luister_vir_lui(request, pk):
         model.uitkomtyd.strftime("%H:%M:%S")
     ]
     model.luister_vir_lui(luiTye)
-    return redirect("KlokRooster:roosterlys")
+    return redirect(model.get_absolute_url())
 
 def verdoof(request, pk):
     model = get_object_or_404(Rooster, pk=pk)
     model.verdoof()
-    return redirect("KlokRooster:roosterlys")
+    return redirect(model.get_absolute_url())
 
 def lui_klok(request, pk):
     model = get_object_or_404(Rooster, pk=pk)
