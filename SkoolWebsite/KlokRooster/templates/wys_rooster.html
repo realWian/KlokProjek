@@ -49,4 +49,9 @@
 <br>
 <a href="{% url 'KlokRooster:verander_rooster' rooster.pk %}"><button>Verander</button></a>
 <a href="{% url 'KlokRooster:skrap_rooster' rooster.pk %}"><button>Skrap</button></a>
+<br>
+<a href="{% url 'KlokRooster:luister_vir_lui' rooster.pk %}"><button class="doof">Luister</button></a>
+<a href="{% url 'KlokRooster:verdoof' rooster.pk %}"><button class="luisterend">Verdoof</button></a>
+<br>
+<a href="{% url 'KlokRooster:lui_klok' rooster.pk %}"><button class="luisterend">Lui Klok</button></a>
 {% endblock %}

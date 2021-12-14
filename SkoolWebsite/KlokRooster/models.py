@@ -1,5 +1,11 @@
 from django.db import models
 from django.urls import reverse_lazy
+# from django.contrib.auth.models import User
+import datetime
+import time
+from playsound import playsound
+from pathlib import Path
+import os
 
 # Create your models here.
 class Rooster(models.Model):
@@ -21,8 +27,34 @@ class Rooster(models.Model):
     periode12 = models.TimeField(default="13:30")
     uitkomtyd = models.TimeField(default="14:00")
 
+    luiTye = [periode1, periode2, periode3, periode4, pouse1, periode5, periode6, periode7, periode8, pouse2, periode9, periode10, periode11, periode12]
+
+    luisterend = False
+
     def get_absolute_url(self):
         return reverse_lazy("KlokRooster:rooster", kwargs={"pk" : self.pk})
 
+    def verdoof(self):
+        self.luisterend = False     
+
+    def lui_klok(self):
+        playsound(os.path.join(Path(__file__).resolve().parent, "static/audio/Skoolklok_audio.m4a"))
+
+    def luister_vir_lui(self, luiTye):
+        self.luisterend = True
+        while self.luisterend:
+            if datetime.datetime.now().strftime("%H:%M:%S") == luiTye[-1]:
+                self.lui_klok()
+                break
+            if datetime.datetime.now().strftime("%H:%M:%S") in luiTye:
+                self.lui_klok()
+
     def __str__(self):
         return self.naam
+
+# class UserProfileInfo(models.Model):
+#     user = models.OneToOneField(User)
+#     grade = models.PositiveIntegerField(max=12)
+
+#     def __str__(self):
+#         return self.user.username

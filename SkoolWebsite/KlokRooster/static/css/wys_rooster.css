@@ -10,3 +10,21 @@ table td {
 a button {
     margin: 8px 8px 8px 8px;
 }
+
+.doof {
+    font-size: 16pt;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: greenyellow;
+    margin-bottom: 10px;
+    margin-left: 5%;
+    border-radius: 10px;
+}
+
+.luisterend {
+    font-size: 16pt;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: rgb(216, 56, 56);
+    margin-bottom: 10px;
+    margin-left: 5%;
+    border-radius: 10px;
+}

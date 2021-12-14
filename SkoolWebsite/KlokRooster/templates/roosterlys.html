@@ -1,19 +1,21 @@
 {% extends 'rooster_base.html' %}
 
 {% block head_block %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/roosterlys.css' %}">
 <title>Roosterlys</title>
 {% endblock %}
 
 {% block body_block %}
 <br>
-<h3>Roosters:</h3>
+<h3><u>Roosters:</u></h3>
 <ol>
     {% for rooster in roosters %}
         <li>
-            <a href="{% url 'KlokRooster:rooster' rooster.pk %}">{{ rooster.naam }}</a>
+            <a href="{% url 'KlokRooster:rooster' rooster.pk %}"><span class="lys_link">{{ rooster.naam }}</span></a>
         </li>
     {% endfor %}
 </ol>
 <br>
-<a href="{% url 'KlokRooster:skep_rooster' %}"><button>Skep Nuwe Rooster</button></a>
+<a href="{% url 'KlokRooster:skep_rooster' %}"><button class="skep_nuwe">Skep Nuwe Rooster</button></a>
 {% endblock %}
