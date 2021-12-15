@@ -27,8 +27,6 @@ class Rooster(models.Model):
     periode12 = models.TimeField(default="13:30")
     uitkomtyd = models.TimeField(default="14:00")
 
-    luiTye = [periode1, periode2, periode3, periode4, pouse1, periode5, periode6, periode7, periode8, pouse2, periode9, periode10, periode11, periode12]
-
     luisterend = False
 
     def get_absolute_url(self):
