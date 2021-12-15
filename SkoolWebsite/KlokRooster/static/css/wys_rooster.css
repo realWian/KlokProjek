@@ -5,6 +5,7 @@ table {
 table td {
     border: solid black 3px;
     padding: 3px;
+    width: 250px;
 }
 
 a button {
