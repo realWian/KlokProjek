@@ -15,7 +15,7 @@
 }
 
 .lys_link {
-    text-decoration-color: none;
+    text-decoration: none;
     font-size: 18pt;
     color: black;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 

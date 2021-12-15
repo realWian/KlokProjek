@@ -12,7 +12,7 @@
 <ol>
     {% for rooster in roosters %}
         <li>
-            <a href="{% url 'KlokRooster:rooster' rooster.pk %}"><span class="lys_link">{{ rooster.naam }}</span></a>
+            <a class="lys_link" href="{% url 'KlokRooster:rooster' rooster.pk %}">{{ rooster.naam }}</a>
         </li>
     {% endfor %}
 </ol>
