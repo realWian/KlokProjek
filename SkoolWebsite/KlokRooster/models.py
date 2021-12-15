@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse_lazy
+from django.shortcuts import get_object_or_404
 # from django.contrib.auth.models import User
 import datetime
 import time
@@ -27,20 +28,16 @@ class Rooster(models.Model):
     periode12 = models.TimeField(default="13:30")
     uitkomtyd = models.TimeField(default="14:00")
 
-    luisterend = False
+    luisterend = models.BooleanField(default=False)
 
     def get_absolute_url(self):
-        return reverse_lazy("KlokRooster:rooster", kwargs={"pk" : self.pk})
-
-    def verdoof(self):
-        self.luisterend = False     
+        return reverse_lazy("KlokRooster:rooster", kwargs={"pk" : self.pk}) 
 
     def lui_klok(self):
         playsound(os.path.join(Path(__file__).resolve().parent, "static/audio/Skoolklok_audio.m4a"))
 
     def luister_vir_lui(self, luiTye):
-        self.luisterend = True
-        while self.luisterend:
+        while get_object_or_404(Rooster, pk=self.pk).luisterend:
             if datetime.datetime.now().strftime("%H:%M:%S") == luiTye[-1]:
                 self.lui_klok()
                 break

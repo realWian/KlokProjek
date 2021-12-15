@@ -85,9 +85,15 @@
 <a href="{% url 'KlokRooster:verander_rooster' rooster.pk %}"><button class="verander">Verander</button></a>
 <a href="{% url 'KlokRooster:skrap_rooster' rooster.pk %}"><button class="skrap">Skrap</button></a>
 <br>
-<div id="luister_doof">
-    <a href="{% url 'KlokRooster:luister_vir_lui' rooster.pk %}"><button class="doof" onclick="veranderToestand()">Luister</button></a>
-</div>
+{% if not rooster.luisterend %}
+    <div id="luister_doof">
+        <a href="{% url 'KlokRooster:luister_vir_lui' rooster.pk %}"><button class="doof" onclick="veranderToestand()">Luister</button></a>
+    </div>
+{% else %}
+    <div id="luister_doof">
+        <a href="{% url 'KlokRooster:verdoof' rooster.pk %}"><button class="luisterend">Verdoof</button></a>
+    </div>
+{% endif %}
 <br>
 <a href="{% url 'KlokRooster:lui_klok' rooster.pk %}"><button class="lui_klok">Lui Klok</button></a>
 {% endblock %}

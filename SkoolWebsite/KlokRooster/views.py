@@ -14,6 +14,8 @@ class RoosterListView(ListView):
 
 def luister_vir_lui(request, pk):
     model = get_object_or_404(Rooster, pk=pk)
+    model.luisterend = True
+    model.save()
     luiTye = [
         model.periode1.strftime("%H:%M:%S"), 
         model.periode2.strftime("%H:%M:%S"),
@@ -36,7 +38,8 @@ def luister_vir_lui(request, pk):
 
 def verdoof(request, pk):
     model = get_object_or_404(Rooster, pk=pk)
-    model.verdoof()
+    model.luisterend = False
+    model.save()
     return redirect(model.get_absolute_url())
 
 def lui_klok(request, pk):
@@ -52,12 +55,12 @@ class RoosterDetailView(DetailView):
 class RoosterUpdateView(UpdateView):
     context_object_name = "rooster"
     model = Rooster
-    fields = "__all__"
+    fields = ("naam", "periode1", "periode2", "periode3", "periode4", "pouse1", "periode5", "periode6", "periode7", "periode8", "pouse2", "periode9", "periode10", "periode11", "periode12", "uitkomtyd")
     template_name = "verander_rooster.html"
 
 class RoosterCreateView(CreateView):
     model = Rooster
-    fields ="__all__"
+    fields = ("naam", "periode1", "periode2", "periode3", "periode4", "pouse1", "periode5", "periode6", "periode7", "periode8", "pouse2", "periode9", "periode10", "periode11", "periode12", "uitkomtyd")
     template_name = "skep_rooster.html"
 
 class RoosterDeleteView(DeleteView):
