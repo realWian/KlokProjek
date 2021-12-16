@@ -8,7 +8,7 @@
 
 {% block body_block %}
 <br>
-<h2>Teken asseblief in om toepassing te kan gebruik.</h2>
+<h2>Teken asseblief in om die toepassing te kan gebruik.</h2>
 <form action="{% url 'KlokRooster:login' %}" method="POST">
     {% csrf_token %}
     {{ form.as_p }}
