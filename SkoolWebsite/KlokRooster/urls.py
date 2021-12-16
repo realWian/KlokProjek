@@ -4,7 +4,7 @@ from KlokRooster.views import Index, RoosterListView, RoosterDetailView, Rooster
 app_name = "KlokRooster"
 
 urlpatterns = [
-    path('', Index.as_view(), name='index'),
+    path('', Index.as_view(), name="index"),
     path('roosterlys/', RoosterListView.as_view(), name="roosterlys"),
     path('rooster/<int:pk>/luisterend', luister_vir_lui, name="luister_vir_lui"),
     path('rooster/<int:pk>/verdoof', verdoof, name="verdoof"),

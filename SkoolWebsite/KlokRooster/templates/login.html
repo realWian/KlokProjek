@@ -1,0 +1,17 @@
+{% extends 'rooster_base.html' %}
+
+{% block head_block %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<title>Teken in</title>
+{% endblock %}
+
+{% block body_block %}
+<br>
+<h2>Teken asseblief in om toepassing te kan gebruik.</h2>
+<form action="{% url 'login' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="teken_in">Teken in</button>
+</form>
+{% endblock %}
