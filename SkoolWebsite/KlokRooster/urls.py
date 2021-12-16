@@ -1,10 +1,15 @@
 from django.urls import path
-from KlokRooster.views import Index, RoosterListView, RoosterDetailView, RoosterUpdateView, RoosterCreateView, RoosterDeleteView, luister_vir_lui, verdoof, lui_klok
+from KlokRooster.views import (Index, RoosterListView, RoosterDetailView,
+                                RoosterUpdateView, RoosterCreateView, RoosterDeleteView,
+                                luister_vir_lui, verdoof, lui_klok, RoosterLoginView)
+from django.contrib.auth.views import LogoutView
 
 app_name = "KlokRooster"
 
 urlpatterns = [
     path('', Index.as_view(), name="index"),
+    path('teken_in', RoosterLoginView.as_view(), name="login"),
+    path('teken_uit', LogoutView.as_view(), name="logout"),
     path('roosterlys/', RoosterListView.as_view(), name="roosterlys"),
     path('rooster/<int:pk>/luisterend', luister_vir_lui, name="luister_vir_lui"),
     path('rooster/<int:pk>/verdoof', verdoof, name="verdoof"),

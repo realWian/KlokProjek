@@ -22,10 +22,10 @@
                 <ul class="navbar-nav mr-auto">
                     {% if user.is_authenticated %}
                     <li class="nav-item active">
-                        <a class="nav-link navlink-custom" href="{% url 'logout'%}">Teken uit</a>
+                        <a class="nav-link navlink-custom" href="{% url 'KlokRooster:logout'%}">Teken uit</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle dropdown-toggle-custom" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Vallys</a>
+                        <a class="nav-link dropdown-toggle dropdown-toggle-custom" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Wiplys</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{% url 'KlokRooster:roosterlys'%}">Roosterlys</a>
                             <a class="dropdown-item" href="{% url 'admin:index'%}">Admin</a>
@@ -33,10 +33,10 @@
                     </li>
                     {% else %}
                     <li class="nav-item active">
-                        <a class="nav-link navlink-custom" href="{% url 'login' %}">Teken in</a>
+                        <a class="nav-link navlink-custom" href="{% url 'KlokRooster:login' %}">Teken in</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle dropdown-toggle-custom" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Vallys</a>
+                        <a class="nav-link dropdown-toggle dropdown-toggle-custom" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Wiplys</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{% url 'admin:index'%}">Admin</a>
                         </div>

@@ -4,10 +4,27 @@ from KlokRooster.models import Rooster
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.views import LoginView
+from django.contrib.auth.forms import AuthenticationForm
 
 # Create your views here.
 class Index(TemplateView):
     template_name = 'index.html'
+
+class RoosterAuthenticationForm(AuthenticationForm):
+    error_messages = {
+        'invalid_login' : ("Die gegewe besonderhede was ongeldig. Probeer weer of kontak die administrateur."),
+        'inactive' : ("Hierdie rekening is tans onaktief.")
+    }
+
+    def __init__(self, *args, **kwargs):
+        super(RoosterAuthenticationForm, self).__init__(*args, **kwargs)
+        self.fields["username"].label = "Noemnaam:"
+        self.fields["password"].label = "Wagwoord:"
+    
+class RoosterLoginView(LoginView):
+    template_name = "login.html"
+    authentication_form = RoosterAuthenticationForm
 
 class RoosterListView(LoginRequiredMixin, ListView):
     context_object_name = "roosters"
