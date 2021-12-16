@@ -1,7 +1,6 @@
 from django.db import models
 from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404
-# from django.contrib.auth.models import User
 import datetime
 import time
 from playsound import playsound
@@ -46,10 +45,3 @@ class Rooster(models.Model):
 
     def __str__(self):
         return self.naam
-
-# class UserProfileInfo(models.Model):
-#     user = models.OneToOneField(User)
-#     grade = models.PositiveIntegerField(max=12)
-
-#     def __str__(self):
-#         return self.user.username
