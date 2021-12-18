@@ -54,6 +54,8 @@ def luister_vir_lui(request, pk):
         model.uitkomtyd.strftime("%H:%M:%S")
     ]
     model.luister_vir_lui(luiTye)
+    model.luisterend = False
+    model.save()
     return redirect(model.get_absolute_url())
 
 @login_required
