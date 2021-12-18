@@ -34,11 +34,13 @@ class Rooster(models.Model):
 
     def lui_klok(self):
         playsound(os.path.join(Path(__file__).resolve().parent, "static/audio/Skoolklok_audio.m4a"))
+        print("Klok lui: " + datetime.datetime.now().strftime("%H:%M:%S"))
 
     def luister_vir_lui(self, luiTye):
         while get_object_or_404(Rooster, pk=self.pk).luisterend:
             if datetime.datetime.now().strftime("%H:%M:%S") == luiTye[-1]:
-                self.lui_klok()
+                self.lui_klok()  
+                print("Stop.")
                 break
             if datetime.datetime.now().strftime("%H:%M:%S") in luiTye:
                 self.lui_klok()
