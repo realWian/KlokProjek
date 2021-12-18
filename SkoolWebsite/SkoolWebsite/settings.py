@@ -131,6 +131,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Login/logout Redirect
-LOGIN_URL = "login"
+LOGIN_URL = "KlokRooster:login"
 LOGIN_REDIRECT_URL = "KlokRooster:index"
 LOGOUT_REDIRECT_URL = "KlokRooster:index"
