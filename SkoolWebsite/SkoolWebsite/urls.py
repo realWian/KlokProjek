@@ -16,8 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 import KlokRooster.urls
+from KlokRooster.models import Rooster
+from django.shortcuts import get_object_or_404
 
 urlpatterns = [
     path('', include(KlokRooster.urls)),
     path('admin/', admin.site.urls),
 ]
+
+# Insures all roosters are deaf on startup.
+rooster_list = Rooster.objects.all()
+for rooster in rooster_list:
+    rooster.luisterend = False
+    rooster.save()
