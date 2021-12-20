@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.forms import AuthenticationForm
+import datetime
 
 # Create your views here.
 class Index(TemplateView):
@@ -53,6 +54,7 @@ def luister_vir_lui(request, pk):
         model.periode12.strftime("%H:%M:%S"), 
         model.uitkomtyd.strftime("%H:%M:%S")
     ]
+    print("Luisterend: " + datetime.datetime.now().strftime("%H:%M:%S"))
     model.luister_vir_lui(luiTye)
     model.luisterend = False
     model.save()
@@ -63,6 +65,7 @@ def verdoof(request, pk):
     model = get_object_or_404(Rooster, pk=pk)
     model.luisterend = False
     model.save()
+    print("Doof: " + datetime.datetime.now().strftime("%H:%M:%S"))
     return redirect(model.get_absolute_url())
 
 @login_required
