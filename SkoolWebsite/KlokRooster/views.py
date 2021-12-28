@@ -58,6 +58,7 @@ def luister_vir_lui(request, pk):
     model.luister_vir_lui(luiTye)
     model.luisterend = False
     model.save()
+    print("Doof: " + datetime.datetime.now().strftime("%H:%M:%S"))
     return redirect(model.get_absolute_url())
 
 @login_required
