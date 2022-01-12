@@ -38,6 +38,7 @@ def luister_vir_lui(request, pk):
     model.luisterend = True
     model.save()
     luiTye = [
+        model.AantreeTyd.strftime("%H:%M:%S"),
         model.periode1.strftime("%H:%M:%S"), 
         model.periode2.strftime("%H:%M:%S"),
         model.periode3.strftime("%H:%M:%S"), 
@@ -83,12 +84,12 @@ class RoosterDetailView(LoginRequiredMixin, DetailView):
 class RoosterUpdateView(LoginRequiredMixin, UpdateView):
     context_object_name = "rooster"
     model = Rooster
-    fields = ("naam", "periode1", "periode2", "periode3", "periode4", "pouse1", "periode5", "periode6", "periode7", "periode8", "pouse2", "periode9", "periode10", "periode11", "periode12", "uitkomtyd")
+    fields = ("naam", "aantreetyd", "periode1", "periode2", "periode3", "periode4", "pouse1", "periode5", "periode6", "periode7", "periode8", "pouse2", "periode9", "periode10", "periode11", "periode12", "uitkomtyd")
     template_name = "verander_rooster.html"
 
 class RoosterCreateView(LoginRequiredMixin, CreateView):
     model = Rooster
-    fields = ("naam", "periode1", "periode2", "periode3", "periode4", "pouse1", "periode5", "periode6", "periode7", "periode8", "pouse2", "periode9", "periode10", "periode11", "periode12", "uitkomtyd")
+    fields = ("naam", "aantreetyd", "periode1", "periode2", "periode3", "periode4", "pouse1", "periode5", "periode6", "periode7", "periode8", "pouse2", "periode9", "periode10", "periode11", "periode12", "uitkomtyd")
     template_name = "skep_rooster.html"
 
 class RoosterDeleteView(LoginRequiredMixin, DeleteView):
