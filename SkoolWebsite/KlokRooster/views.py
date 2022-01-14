@@ -38,7 +38,7 @@ def luister_vir_lui(request, pk):
     model.luisterend = True
     model.save()
     luiTye = [
-        model.AantreeTyd.strftime("%H:%M:%S"),
+        model.aantreetyd.strftime("%H:%M:%S"),
         model.periode1.strftime("%H:%M:%S"), 
         model.periode2.strftime("%H:%M:%S"),
         model.periode3.strftime("%H:%M:%S"), 
