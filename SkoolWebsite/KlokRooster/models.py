@@ -11,7 +11,7 @@ import os
 class Rooster(models.Model):
     naam = models.CharField(max_length=256, default="Nuwe Rooster")
     
-    aantreetyd = models.TimeField(default="7:25")
+    aantreetyd = models.TimeField(default="7:20")
     periode1 = models.TimeField(default="7:30")
     periode2 = models.TimeField(default="8:00")
     periode3 = models.TimeField(default="8:30")
